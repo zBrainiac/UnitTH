@@ -87,20 +87,6 @@
  */
 package unitth.core;
 
-import java.io.File;
-import java.io.FileFilter;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FilenameFilter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Locale;
-import java.util.Properties;
-
 import unitth.fitnesse.FitNesseReportParser;
 import unitth.fitnesse.RootTestSuite;
 import unitth.graphics.junit.ExecutionTimeGraphCreator;
@@ -118,12 +104,15 @@ import unitth.junit.TestHistory;
 import unitth.junit.TestModuleSummary;
 import unitth.junit.TestPackageSummary;
 
+import java.io.*;
+import java.util.*;
+
 /**
  * Main class responsible for reading/parsing the files that compromise the
  * JUnit test reports.
  */
 public class UnitTH {
-	public final static String versionNumber = "2.0";
+	public final static String versionNumber = "2.1";
 
 	public static boolean c_DBG = false; // FIXME
 
