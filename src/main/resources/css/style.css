@@ -20,7 +20,7 @@
  */
 BODY {
 	Font-size: 10px;
-	FONT-FAMILY: verdana, arial, sans-serif;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	PADDING: 0px;
 	MARGIN: 0px;
 }
