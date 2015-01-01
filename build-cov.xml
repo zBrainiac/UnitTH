@@ -1,0 +1,206 @@
+<!--
+  This build.xml is used for building and running the Unit-
+  test history generator tool.
+
+  $Id: build-cov.xml,v 1.1 2010/05/18 19:19:16 andnyb Exp $
+   
+  Author: Andreas Nyberg
+-->
+<project name="UnitTH-CodeCoverage" default="all-cov" basedir=".">
+
+	<description>
+	    UnitTH - http://junitth.sourceforge.net/
+	    UnitTH is licensed under the GNU General Public License
+	    UnitHT comes with ABSOLUTELY NO WARRANTY
+	</description>
+
+	<import file="build.xml"/>
+	<property file="build.properties" />
+	<property name="bin.dir" location="bin" />
+
+	<path id="cobertura.classpath">
+		<fileset dir="${cobertura.dir}">
+			<include name="cobertura.jar" />
+			<include name="lib/**/*.jar" />
+		</fileset>
+	</path>
+
+	<taskdef classpathref="cobertura.classpath" resource="tasks.properties" />
+
+	<target name="all-cov" description="Runs the full code coverage target for UnitTH.">
+		<antcall target="clean" />
+		<antcall target="build" />
+		<antcall target="instrument" />
+		<antcall target="test.coverage" />
+		<antcall target="coverage.report" />
+	</target>
+	
+	<target name="init">
+		<mkdir dir="${instrumented.classes}" />
+		<mkdir dir="${coverage.report}" />
+	</target>
+
+	<target name="instrument" depends="init,build" description="Instruments all classes.">
+		<delete file="cobertura.ser" />
+		<delete dir="${instrumented.classes}" />
+		<cobertura-instrument todir="${instrumented.classes}">
+			<!--
+					The following line causes instrument to ignore any
+					source line containing a reference to log4j, for the
+					purposes of coverage reporting.
+				-->
+			<ignore regex="org.apache.log4j.*" />
+
+			<fileset dir="${build}">
+				<include name="**/*.class" />
+				<exclude name="**/*Tester.class" />
+				<exclude name="**/TestClass1.class" />
+				<exclude name="**/TestClass2.class" />
+				<exclude name="**/UnitTHUtils.class" />
+				<exclude name="**/TestReportParams.class" />
+			</fileset>
+			<fileset dir="bin">
+				<include name="unitth.jar" />
+			</fileset>
+		</cobertura-instrument>
+
+	</target>
+
+	<target name="coverage.test" depends="init,build,instrument" description="Runs the tests with code coverage..">
+		<junit fork="yes" dir="${basedir}" failureProperty="test.failed">
+			<!--
+					Note the classpath order: instrumented classes are before the
+					original (uninstrumented) classes.  This is important.
+				-->
+			<classpath refid="cobertura.classpath" />
+			<classpath location="${instrumented.classes}" />
+			<classpath location="${classes.dir}" />
+			<classpath>
+				<pathelement path="." />
+				<pathelement location="${junit.full}" />
+			</classpath>
+
+			<formatter type="xml" />
+			<test name="${testcase}" todir="${coverage.report}" if="testcase" />
+			<batchtest todir="${coverage.report}" unless="testcase">
+				<fileset dir="${src}">
+					<include name="**/*Tester.java" />
+				</fileset>
+			</batchtest>
+		</junit>
+
+		<junitreport todir="${test.reports}">
+			<fileset dir="${test.reports}">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report format="frames" todir="${test.reports}" />
+		</junitreport>
+	</target>
+
+	<target name="coverage.report" description="Generates the code coverage report.">
+		<cobertura-report destdir="${coverage.report}">
+			<fileset dir="${src}">
+				<include name="**/*.java" />
+			</fileset>
+		</cobertura-report>
+	</target>
+
+	<macrodef name="runtest.coverage">
+		<attribute name="class" />
+		<sequential>
+			<antcall target="-test.coverage">
+				<param name="TesterClass" value="@{class}" />
+			</antcall>
+		</sequential>
+	</macrodef>
+
+	<target name="-test.coverage" depends="build" description="The actual test target. Shall be called from test.">
+
+		<!--property name="myclasspath" refid="main.classpath" /-->
+		<mkdir dir="report" />
+		<junit fork="true" printsummary="withOutAndErr" haltonfailure="no" showoutput="false">
+			<classpath location="${instrumented.classes}" />
+			<classpath location="${build}" />
+			<classpath refid="cobertura.classpath" />
+			<classpath>
+				<pathelement path="." />
+				<pathelement location="${junit.full}" />
+			</classpath>
+			<!--
+			<classpath>
+				<pathelement path="." />
+				<pathelement location="unitth.jar" />
+			</classpath>
+			-->
+			<formatter type="xml" usefile="true" />
+
+			<test name="${TesterClass}" todir="${test.reports}" />
+		</junit>
+	</target>
+
+	<target name="test.coverage" description="Runs the unit tests for the test history generator.">
+		<delete dir="${test.reports}" />
+		<mkdir dir="${test.reports}" />
+		<runtest.coverage class="test.core.CoreTester" />
+		<runtest.coverage class="test.core.ParserTester" />
+		<runtest.coverage class="test.graphics.GraphCreatorTester" />
+		<runtest.coverage class="test.html.GeneratorTester" />
+		<runtest.coverage class="test.items.RunHistoryTester" />
+		<runtest.coverage class="test.items.TestItemTester" />
+		<runtest.coverage class="test.items.TestItemUtilsTester" />
+		<runtest.coverage class="test.items.TestVerdictTester" />
+		<runtest.coverage class="test.junititems.TestCaseTester" />
+		<runtest.coverage class="test.junititems.TestCaseSummaryTester" />
+		<runtest.coverage class="test.junititems.TestModuleTester" />
+		<runtest.coverage class="test.junititems.TestModuleSummaryTester" />
+		<runtest.coverage class="test.junititems.TestPackageSummaryTester" />
+		<runtest.coverage class="test.junititems.TestPackageTester" />
+		<runtest.coverage class="test.junititems.TestRunTester" />
+		<antcall target="generate.report" />
+	</target>
+
+	<target name="reference.test.coverage" description="Runs the reference test set used for verifying report output.">
+		<delete dir="${test.reports}" />
+		<mkdir dir="${test.reports}" />
+		<runtest.coverage class="junittest.TestClass1" />
+		<runtest.coverage class="junittest.TestClass2" />
+		<runtest.coverage class="junittest.package1.TestClass1" />
+		<runtest.coverage class="junittest.package1.TestClass2" />
+		<runtest.coverage class="junittest.package1.subpackage1.TestClass1" />
+		<runtest.coverage class="junittest.package1.subpackage1.TestClass2" />
+		<runtest.coverage class="junittest.package1.subpackage1.subsubpackage1.TestClass1" />
+		<runtest.coverage class="junittest.package1.subpackage1.subsubpackage1.TestClass2" />
+		<runtest.coverage class="junittest.package1.subpackage2.TestClass1" />
+		<runtest.coverage class="junittest.package1.subpackage2.TestClass2" />
+		<runtest.coverage class="junittest.package2.TestClass1" />
+		<runtest.coverage class="junittest.package2.TestClass2" />
+		<runtest.coverage class="junittest.package2.subpackage1.TestClass1" />
+		<runtest.coverage class="junittest.package2.subpackage1.TestClass2" />
+		<runtest.coverage class="junittest.package2.subpackage2.TestClass1" />
+		<runtest.coverage class="junittest.package2.subpackage2.TestClass2" />
+		<runtest.coverage class="junittest.package2.subpackage2.subsubpackage2.TestClass1" />
+		<runtest.coverage class="junittest.package2.subpackage2.subsubpackage2.TestClass2" />
+		<antcall target="generate.reference.report" />
+		<antcall target="store.reference.report" />
+	</target>
+
+
+	<target name="generate.history.coverage" description="Generates a test history from existing Unit-reports and runs code coverage at the same time.">
+
+		<java jar="${instrumented.classes}/unitth.jar" fork="true" failonerror="true" maxmemory="128m">
+			<!--java dir="${instrumented.classes}" classname="unitth.core.UnitTH" fork="true" failonerror="true" maxmemory="128m"-->
+			<!--java jar="bin/unitth.jar" fork="true" failonerror="true" maxmemory="128m"-->
+
+			<arg value="../${reportStorage}/${reportStorageReports}" />
+
+			<classpath location="${instrumented.classes}" />
+			<classpath location="${build}" />
+			<classpath refid="cobertura.classpath" />
+			<sysproperty key="unitth.html.report.path" value="." />
+			<sysproperty key="unitth.report.dir" value="report.out" />
+			<sysproperty key="unitth.generate.exectimegraphs" value="false" />
+			<sysproperty key="unitth.xml.report.filter" value="TEST-" />
+		</java>
+	</target>
+
+</project>
