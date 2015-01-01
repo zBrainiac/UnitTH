@@ -1,0 +1,95 @@
+<!--
+  This build.xml is used for building and running the Unit-
+  test history generator tool. UnitTH.
+
+  Make sure that java, javac, jps is in the path.
+
+  $Id$
+   
+  Author: Andreas Nyberg
+-->
+<project name="UnitTH" default="all" basedir=".">
+
+	<description>
+	    UnitTH - http://junitth.sourceforge.net/
+	    UnitTH is licensed under the GNU General Public License
+	    UnitHT comes with ABSOLUTELY NO WARRANTY
+	</description>
+
+	<property file="unitth.properties" />
+	<property name="dir.bin" location="bin" />
+	<property name="version" value="2-1-1" />
+	<property name="dir.build" value="build-${version}"/>
+	
+	<path id="main.classpath">
+		<pathelement location="/src" />
+		<pathelement location="/test.src" />
+		<pathelement path="${java.class.path}/" />
+	</path>
+
+	<!-- Build all the code -->
+	<target name="build" description="Builds the code and creates a jar file.">
+		<mkdir dir="${dir.build}" />
+		<mkdir dir="${dir.bin}" />
+
+
+		<javac srcdir="src" destdir="${dir.build}" debug="true" listfiles="yes" fork="no" includeantruntime="true" />
+
+		<jar destfile="${dir.bin}/unitth.jar" basedir="${dir.build}" excludes="fitnesse/**,test/**,junittest/**">
+
+			<manifest>
+				<attribute name="Main-Class" value="unitth.core.UnitTH" />
+				<attribute name="Built-By" value="Marcel" />
+				<attribute name="Implementation-Version" value="${version}"/>
+				<section name="unitth/core/UnitTH.class">
+					<attribute name="Sealed" value="false" />
+				</section>
+			</manifest>
+
+			<fileset dir="src/main/resources" includes="**/*.css"/>
+			<fileset dir="src/main/resources" includes="**/*.gif"/>
+			<fileset dir="src/main/resources" includes="**/*.jpg"/>
+			<fileset dir="src/main/resources" includes="**/*.js"/>
+		</jar>
+
+		<copy file="${dir.bin}/unitth.jar" todir="/Users/marcel/Desktop/unitth/"/>
+
+	</target>
+
+
+	<target name="clean" description="Clean class files and xml files.">
+		<delete failonerror="false" quiet="true">
+			<fileset dir="${dir.build}" includes="**/*.class" />
+		</delete>
+		<delete failonerror="false" quiet="true">
+			<fileset dir="${dir.bin}" includes="*.jar" />
+		</delete>
+		<delete failonerror="false" quiet="true">
+			<fileset dir="." includes="unitth.zip" />
+		</delete>
+		<delete dir="unittest-run1" failonerror="false" quiet="true" />
+		<delete dir="${dir.build}" />
+	</target>
+
+
+	<target name="package.unitth" description="Packages everything needed to build a release.">
+		<mkdir dir="package" />
+		<mkdir dir="package/latest" />
+		<zip destfile="package/unitth-${dir.build}-SNAPSHOT.zip">
+			<zipfileset dir="." includes="LICENSE.txt" prefix="unitth" />
+			<zipfileset dir="." includes="README.txt" prefix="unitth" />
+			<zipfileset dir="${dir.bin}" includes="unitth.jar" prefix="unitth" />
+			<zipfileset dir="." includes="unitth.properties" prefix="unitth" />
+		</zip>
+		<copy file="package/unitth-${dir.build}-SNAPSHOT.zip" todir="package/latest"/>
+	</target>
+
+
+	<target name="all" description="Runs the complete continous integration target.">
+		<antcall target="clean" />
+		<antcall target="build" />
+		<antcall target="package.unitth" />
+	</target>
+
+
+</project>
