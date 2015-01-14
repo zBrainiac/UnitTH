@@ -126,45 +126,10 @@ public class UnitTH {
 	private final static String PROP_XML_REPORT_FILTER = "unitth.xml.report.filter";
 	private final static String PROP_REPORT_DIR = "unitth.report.dir";
 	private final static String PROP_HTML_REPORT_PATH = "unitth.html.report.path";
+	private final static String PROP_HTML_REPORT_MODE = "unitth.html.report.mode";
 	private final static String PROP_GEN_EXECTIMEGRAPHS = "unitth.generate.exectimegraphs";
 	
 	public final static String NOT_IN_PACKAGE = "not-in-package";
-
-	private static String c_HELP_TEXT = "\n"
-			+ " UnitTH Copyright (C) 2010\n"
-			+ " This program comes with ABSOLUTELY NO WARRANTY.\n"
-			+ " This is free software, and you are welcome to redistribute it\n"
-			+ " under certain conditions.\n\n"
-			+ " Unit Test (report) history generator - UnitTH v"
-			+ versionNumber
-			+ "\n"
-			+ "------------------------------------------------------\n"
-			+ "This program is to be used for multiple generated\n"
-			+ "test runs and test reports. The folders where\n"
-			+ "the test results and generated reports are\n"
-			+ "placed counts as input to this test history\n"
-			+ "generator.\n"
-			+ "\n"
-			+ "Input and output properties shall be set using any of these three\n"
-			+ "methods (given in the proprity order understood by the application,\n"
-			+ "ie. system parameters overrides local properties).\n\n"
-			+ " 1) as system parameters in build scripts\n"
-			+ " 2) as D flags in Ant or Maven invocation\n"
-			+ " 3) in unitth.properties in the working folder\n"
-			+ " 4) in unitth.properties in the $HOME folder\n"
-			+ "\n"
-			+ "Example:\n"
-			+ "\n"
-			+ "> java -jar unitth.jar report_1 report_2 report_3\n"
-			+ "\n"
-			+ "> java -jar unitth.jar report_2009-*\n" + "\n"
-			+ "\n"
-			+ "> java -jar unitth.jar -j jenkinsInstallation/builds/unitth-job/builds\n" + "\n"
-			//+ "\n"
-			//+ "> java -jar unitth.jar -fr FitNesseInstallationFolder\n" + "\n"
-			//+ "\n"
-			//+ "> java -jar unitth.jar -fts FitNesseInstallationFolder/FitNesseRoot/files/testResults/FrontPage.TestSuite\n" + "\n"
-			;
 
 	private static String c_USAGE_TEXT = "\n"
 			+ "UnitTH Copyright (C) 2010\n"
@@ -197,30 +162,19 @@ public class UnitTH {
 			//+ "Example: java -jar unitth.jar -fr FitNesseInstallationFolder\n"
 			;
 
-	/*
-	 * Input flags
-	 */
-	private static String c_FLAG_HELP_LONG = "--help";
-	private static String c_FLAG_HELP_SHORT = "-h";
-	private static String c_FITNESSE_REPORT_ROOT_LONG = "--fitnesse-root";
-	private static String c_FITNESSE_REPORT_ROOT_SHORT = "-fr";
-	private static String c_FITNESSE_REPORT_TESTSUITE_LONG = "--fitnesse-testsuite";
-	private static String c_FITNESSE_REPORT_TESTSUITE_SHORT = "-fts";
-	private static String c_JENKINS_REPORTS_SHORT = "-j";
-	private static String c_JENKINS_REPORTS_LONG = "--jenkins";
 	protected final int c_FILE_START_IDX = 0;
 	protected final int c_FILE_START_IDX_FN = 1;
 	public static final String c_VERSION_SHORT = "-v";
 	public static final String c_VERSION_LONG = "--version";
 
 	public static String[] inputArgs = null;
-	private int startIndex = c_FILE_START_IDX;
 
 	/*
 	 * Properties with default values, or set from the unitth.properties file.
 	 */
 	public static String rootFolder = "report.th";
 	public static String reportPath = ".";
+	public static String reportMode = "long";
 	public static boolean generateExecTimeGraphs = false;
 	public static boolean useAbsPaths = false;
 	public static String xmlReportFilter = "TEST-";
@@ -343,8 +297,40 @@ public class UnitTH {
 			System.out.println(c_USAGE_TEXT);
 			return;
 		}
+		String c_FLAG_HELP_LONG = "--help";
+		String c_FLAG_HELP_SHORT = "-h";
 		if (args[0].equals(c_FLAG_HELP_LONG)
 				|| args[0].equals(c_FLAG_HELP_SHORT)) {
+			String c_HELP_TEXT = "\n"
+					+ " UnitTH Copyright (C) 2010\n"
+					+ " This program comes with ABSOLUTELY NO WARRANTY.\n"
+					+ " This is free software, and you are welcome to redistribute it\n"
+					+ " under certain conditions.\n\n"
+					+ " Unit Test (report) history generator - UnitTH v"
+					+ versionNumber
+					+ "\n"
+					+ "------------------------------------------------------\n"
+					+ "This program is to be used for multiple generated\n"
+					+ "test runs and test reports. The folders where\n"
+					+ "the test results and generated reports are\n"
+					+ "placed counts as input to this test history\n"
+					+ "generator.\n"
+					+ "\n"
+					+ "Input and output properties shall be set using any of these three\n"
+					+ "methods (given in the proprity order understood by the application,\n"
+					+ "ie. system parameters overrides local properties).\n\n"
+					+ " 1) as system parameters in build scripts\n"
+					+ " 2) as D flags in Ant or Maven invocation\n"
+					+ " 3) in unitth.properties in the working folder\n"
+					+ " 4) in unitth.properties in the $HOME folder\n"
+					+ "\n"
+					+ "Example:\n"
+					+ "\n"
+					+ "> java -jar unitth.jar report_1 report_2 report_3\n"
+					+ "\n"
+					+ "> java -jar unitth.jar report_2009-*\n" + "\n"
+					+ "\n"
+					+ "> java -jar unitth.jar -j jenkinsInstallation/builds/unitth-job/builds\n" + "\n";
 			System.out.println(c_HELP_TEXT);
 			return;
 		}
@@ -356,6 +342,12 @@ public class UnitTH {
 		properties = new Properties();
 		readProperties();
 
+		String c_FITNESSE_REPORT_ROOT_LONG = "--fitnesse-root";
+		String c_FITNESSE_REPORT_ROOT_SHORT = "-fr";
+		String c_FITNESSE_REPORT_TESTSUITE_LONG = "--fitnesse-testsuite";
+		String c_FITNESSE_REPORT_TESTSUITE_SHORT = "-fts";
+		String c_JENKINS_REPORTS_SHORT = "-j";
+		String c_JENKINS_REPORTS_LONG = "--jenkins";
 		if (args[0].equals(c_FITNESSE_REPORT_ROOT_SHORT)
 				|| args[0].equals(c_FITNESSE_REPORT_ROOT_LONG)
 				|| args[0].equals(c_FITNESSE_REPORT_TESTSUITE_LONG)
@@ -394,16 +386,16 @@ public class UnitTH {
 			ArrayList<String> buildFolders = new ArrayList<String>();
 			if (jenkinsBuildDir.exists()) {
 				builds = jenkinsBuildDir.listFiles();
-				for (int i=0; i<builds.length; i++) {
-					if (builds[i].isDirectory()) {
-						buildFolders.add(builds[i].getAbsolutePath());
+				for (File build : builds) {
+					if (build.isDirectory()) {
+						buildFolders.add(build.getAbsolutePath());
 					}
 				}
 			} else {
 				System.err.println("Jenkins build reports folder '"+jenkinsBuildDir.getAbsolutePath()+"' does not exists, please check the input arguments '-j <folder path>'.");
 			}
-			
-			if (parseAndCalculate(buildFolders.toArray(new String[0]))) {
+
+			if (parseAndCalculate(buildFolders.toArray(new String[buildFolders.size()]))) {
 				unpackAndGenerate();
 				drawGraphs(false); // JUnit reports
 				long diff = System.currentTimeMillis() - timeStamp;
@@ -474,10 +466,8 @@ public class UnitTH {
 
 			Collection<RootTestSuite> crts = ((unitth.fitnesse.TestHistory) theHistory)
 					.getRootTestSuites();
-			Iterator<RootTestSuite> irts = crts.iterator();
 
-			while (irts.hasNext()) {
-				RootTestSuite rts = irts.next();
+			for (RootTestSuite rts : crts) {
 				FitNesseHistoryHtmlTestSuiteGen htmlTestSuiteGen = new FitNesseHistoryHtmlTestSuiteGen(
 						(unitth.fitnesse.TestHistory) theHistory,
 						generateExecTimeGraphs);
@@ -492,6 +482,7 @@ public class UnitTH {
 		testRuns = new ArrayList<ArrayList<File>>();
 
 		try {
+			int startIndex = c_FILE_START_IDX;
 			for (int i = startIndex; i < args.length; i++) {
 
 				// Get directories and list files
@@ -557,9 +548,7 @@ public class UnitTH {
 						createFitNesseXMLFilter(); // FileNameFilter
 						runFiles = d.listFiles(filter);
 
-						for (File ff : runFiles) {
-							testRunFiles.add(ff);
-						}
+						Collections.addAll(testRunFiles, runFiles);
 						if (testRunFiles.size() > 0) {
 							testRuns.add(testRunFiles);
 						}
@@ -575,7 +564,7 @@ public class UnitTH {
 		}
 	}
 
-	public boolean parseAndCalculateFNR(String... args) {
+	public void parseAndCalculateFNR(String... args) {
 		try {
 			collectAllFilesFNR(args);
 		} catch (Exception e) {
@@ -591,9 +580,8 @@ public class UnitTH {
 			System.exit(0);
 		}
 
-		return true;
 	}
-	
+
 	private void collectAllFilesFNRMultiple(String[] args) {
 		// The testHistory folder.
 		String testHistoryStr;
@@ -602,13 +590,13 @@ public class UnitTH {
 		} else {
 			testHistoryStr = args[1]+File.separator+c_FITNESSE_TESTHISTORY_PATH;
 		}
-		
+
 		//ArrayList<ArrayList<File>> fullFileSet = new ArrayList<ArrayList<File>>();
 		testRuns = new ArrayList<ArrayList<File>>();
 		File fitNesseTestHistory = new File(testHistoryStr);
-		
+
 		if (fitNesseTestHistory.exists()) {
-			
+
 			if (c_DBG) {
 				System.out.println("Checking if file is valid FitNesse test suite history."); // Leave or remove?
 			}
@@ -616,17 +604,17 @@ public class UnitTH {
 				if (f.isDirectory()) {
 					ArrayList<File> suiteFiles = new ArrayList<File>();
 					File[] files = f.listFiles();
-					for (int i=0; i<files.length; i++) {
-						if (files[i].isFile()) {
+					for (File file : files != null ? files : new File[0]) {
+						if (file.isFile()) {
 							if (c_DBG) {
 								System.out.print(".");
 							}
-							String fileName = files[i].getName();
+							String fileName = file.getName();
 							if (fileName.endsWith(".xml") || fileName.endsWith(".XML")) {
-								// Check for presence of  
+								// Check for presence of
 								FileCheckingParser fcp = new FileCheckingParser();
-								if (fcp.parse(files[i]) == true) {
-									suiteFiles.add(files[i]);
+								if (fcp.parse(file)) {
+									suiteFiles.add(file);
 								}
 							}
 						}
@@ -640,9 +628,9 @@ public class UnitTH {
 			wrongFitNesseRootInvocation();
 		}
 	}
-	
-	public boolean parseAndCalculateFNRMultiple(String... args) {
-		
+
+	public void parseAndCalculateFNRMultiple(String... args) {
+
 		try {
 			collectAllFilesFNRMultiple(args);
 		} catch (Exception e) {
@@ -657,9 +645,8 @@ public class UnitTH {
 			System.out.println(c_USAGE_TEXT);
 			System.exit(0);
 		}
-		return true;
 	}
-	
+
 	/**
 	 * Handles all the tasks to be done during execution. - list all files -
 	 * parse all files - generate history report. Needs to be public so that we
@@ -693,7 +680,7 @@ public class UnitTH {
 			// Major, calculation for all parsed runs.
 			theHistory.calcStats();
 
-			if (true == c_DBG && theHistory != null) {
+			if (c_DBG && theHistory != null) {
 				System.out.println(theHistory.toString());
 			}
 			return true;
@@ -832,10 +819,7 @@ public class UnitTH {
 	 */
 	private boolean fileSanityCheck(File inFile) {
 
-		if (!inFile.isFile()) {
-			return false;
-		}
-		return true;
+		return inFile.isFile();
 	}
 
 	/**
@@ -882,12 +866,12 @@ public class UnitTH {
 		} else {
 			//
 			// This section generates everything for the JUnit test reports.
-			// 
+			//
 			prGraphCreator.drawPassRates();
 			tcGraphCreator.drawNumbers();
 			fnGraphCreator.drawNumbers();
 			etGraphCreator.drawExecutionTimes(generateExecTimeGraphs);
-			
+
 			// For each unique package name, get a test package summary that
 			// can be used for creating the unique test module graphs.
 			Object[] uniquePackages = ((TestHistory) theHistory)
@@ -903,7 +887,7 @@ public class UnitTH {
 							generateExecTimeGraphs);
 				}
 			}
-			
+
 			// For each unique module name, get a test module summary that
 			// can be used for creating the unique test module graphs.
 			Object[] uniqueModules = ((TestHistory) theHistory)
@@ -951,7 +935,6 @@ public class UnitTH {
 						.getProperty(PROP_GEN_EXECTIMEGRAPHS)) {
 					setGenerateExecTimeGraphs(properties.getProperty(PROP_GEN_EXECTIMEGRAPHS));
 				}
-				return;
 			}
 		} catch (IOException ioe) {
 			System.err
@@ -983,7 +966,6 @@ public class UnitTH {
 				if (null != propHolder && !propHolder.equals("")) {
 					reportPath = propHolder;
 				}
-				return;
 			}
 		} catch (IOException ioe) {
 			System.err
@@ -991,6 +973,37 @@ public class UnitTH {
 		}
 	}
 
+	private void getJunitReportModeProp(File runProps, File homeProps) {
+		if (null != System.getProperty(PROP_HTML_REPORT_MODE)) {
+			reportMode = System.getProperty(PROP_HTML_REPORT_MODE);
+			return;
+		}
+		try {
+			// Check in the run folder
+			if (runProps.exists()) {
+				properties.load(new FileInputStream(runProps));
+				String propHolder = properties
+						.getProperty(PROP_HTML_REPORT_MODE);
+				if (null != propHolder && !propHolder.equals("")) {
+					reportMode = propHolder;
+				}
+				return;
+			}
+			// Check in the home folder
+			if (homeProps.exists()) {
+				properties.load(new FileInputStream(homeProps));
+				String propHolder = properties
+						.getProperty(PROP_HTML_REPORT_MODE);
+				if (null != propHolder && !propHolder.equals("")) {
+					reportMode = propHolder;
+				}
+			}
+		} catch (IOException ioe) {
+			System.err
+					.println("Problems parsing the properties file... using default settings instead.");
+		}
+	}
+	
 	private void getReportDirProp(File runProps, File homeProps) {
 		if (null != System.getProperty(PROP_REPORT_DIR)) {
 			rootFolder = System.getProperty(PROP_REPORT_DIR);
@@ -1013,7 +1026,6 @@ public class UnitTH {
 				if (null != propHolder && !propHolder.equals("")) {
 					rootFolder = propHolder;
 				}
-				return;
 			}
 		} catch (IOException ioe) {
 			System.err
@@ -1044,7 +1056,6 @@ public class UnitTH {
 				if (null != propHolder && !propHolder.equals("")) {
 					xmlReportFilter = propHolder;
 				}
-				return;
 			}
 		} catch (IOException ioe) {
 			System.err
@@ -1077,7 +1088,6 @@ public class UnitTH {
 						.getProperty(PROP_USE_ABS_PATHS)) {
 					setUseAbsPaths(properties.getProperty(PROP_USE_ABS_PATHS));
 				}
-				return;
 			}
 		} catch (IOException ioe) {
 			System.err
@@ -1086,21 +1096,13 @@ public class UnitTH {
 	}
 	
 	private void setUseAbsPaths(String value) {
-		if (value.equalsIgnoreCase("true")
-				|| value.equalsIgnoreCase("yes")) {
-			useAbsPaths = true;
-		} else {
-			useAbsPaths = false;
-		}
+		useAbsPaths = value.equalsIgnoreCase("true")
+				|| value.equalsIgnoreCase("yes");
 	}
 	
 	private void setGenerateExecTimeGraphs(String value) {
-		if (value.equalsIgnoreCase("true")
-				|| value.equalsIgnoreCase("yes")) {
-			generateExecTimeGraphs = true;
-		} else {
-			generateExecTimeGraphs = false;
-		}
+		generateExecTimeGraphs = value.equalsIgnoreCase("true")
+				|| value.equalsIgnoreCase("yes");
 	}
 	
 	/**
@@ -1118,11 +1120,13 @@ public class UnitTH {
 
 		getExecutionTimeProp(runPropertiesFile, homePropertiesFile);
 		getJunitReportPathProp(runPropertiesFile, homePropertiesFile);
+		getJunitReportModeProp(runPropertiesFile, homePropertiesFile);
 		getReportDirProp(runPropertiesFile, homePropertiesFile);
 		getXmlFilterProp(runPropertiesFile, homePropertiesFile);
 		getAbsPathsProp(runPropertiesFile, homePropertiesFile);
 		
 		properties.setProperty(PROP_HTML_REPORT_PATH, reportPath);
+		properties.setProperty(PROP_HTML_REPORT_MODE, reportMode);
 		properties.setProperty(PROP_REPORT_DIR, rootFolder);
 		properties.setProperty(PROP_XML_REPORT_FILTER, xmlReportFilter);
 		properties.setProperty(PROP_GEN_EXECTIMEGRAPHS, Boolean.toString(generateExecTimeGraphs));
@@ -1130,12 +1134,11 @@ public class UnitTH {
 		
 		System.out.println("Using the following properties");
 		System.out.println(" "+PROP_HTML_REPORT_PATH+" = " + reportPath);
+		System.out.println(" " + PROP_HTML_REPORT_MODE + " = " + reportMode);
 		System.out.println(" "+PROP_REPORT_DIR+" = " + rootFolder);
 		System.out.println(" "+PROP_XML_REPORT_FILTER+" = " + xmlReportFilter);
-		System.out.println(" "+PROP_GEN_EXECTIMEGRAPHS+" = "
-				+ generateExecTimeGraphs);
-		System.out.println(" "+PROP_USE_ABS_PATHS+" = "
-				+ useAbsPaths);
+		System.out.println(" " + PROP_GEN_EXECTIMEGRAPHS + " = " + generateExecTimeGraphs);
+		System.out.println(" " + PROP_USE_ABS_PATHS + " = " + useAbsPaths);
 	}
 	
 	private void wrongFitNesseRootInvocation() {

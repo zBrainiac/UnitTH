@@ -16,26 +16,19 @@
  */
 package unitth.jenkins;
 
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import unitth.core.ReportParser;
+import unitth.core.UnitTH;
+import unitth.core.UnitTHException;
+import unitth.junit.*;
+
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-
-import unitth.core.ReportParser;
-import unitth.core.UnitTH;
-import unitth.core.UnitTHException;
-import unitth.junit.TestCase;
-import unitth.junit.TestCaseVerdict;
-import unitth.junit.TestHistory;
-import unitth.junit.TestModule;
-import unitth.junit.TestPackage;
-import unitth.junit.TestRun;
 
 /**
  * This class is responsible for handling all the parsing of all Jenkins report files. It
@@ -52,15 +45,8 @@ public class JenkinsReportParser extends ReportParser {
 	private SAXParser saxp = null;
 
 	private final String c_XML_TAG_TESTSUITE = "name";
-	private final String c_XML_TAG_TESTSUITE_END = "suite";
-	private final String c_XML_TAG_TESTCASE_NAME = "testName";
 	private final String c_XML_TAG_TESTCASE = "case";
-	private final String c_XML_TAG_CLASSNAME = "className";
-	private final String c_XML_TAG_VERDICT = "failedSince";
-	private final String c_XML_TAG_DURATION = "duration";
-	private final String c_XML_TAG_LAUNCH_TIMESTAMP = "timestamp";
 
-	private int currentRunIdx = 0;
 	private boolean inTestCase = false;
 
 	/* Currently parsed element holders. */
@@ -89,17 +75,20 @@ public class JenkinsReportParser extends ReportParser {
 			history = new TestHistory();
 		} catch (SAXException t) {
 			System.err.println("Could not create SAX parser... "+t.getMessage());
-			return;
 		} catch (Throwable t) {
 			t.printStackTrace();
 			System.err.println("Unknown exception... "+t.getMessage());
-			return;
 		}
 	}
 
 	public void characters(char ch[], int start, int length)
 			throws SAXException {
-		
+
+		String c_XML_TAG_TESTCASE_NAME = "testName";
+		String c_XML_TAG_CLASSNAME = "className";
+		String c_XML_TAG_VERDICT = "failedSince";
+		String c_XML_TAG_DURATION = "duration";
+		String c_XML_TAG_LAUNCH_TIMESTAMP = "timestamp";
 		if (currentElement.equals(c_XML_TAG_TESTSUITE)) {
 			moduleName.append(new String(ch, start, length));
 		} else if (currentElement.equals(c_XML_TAG_DURATION)) {
@@ -170,7 +159,8 @@ public class JenkinsReportParser extends ReportParser {
 		if ("".equals(eName)) {
 			eName = qName; // not namespace-aware
 		}
-		
+
+		String c_XML_TAG_TESTSUITE_END = "suite";
 		if (c_XML_TAG_TESTSUITE_END.equals(eName)) {
 			currentTestModule.setName(moduleName.toString().trim());
 			currentTestModule.setDate(moduleTimestamp.toString().trim());
@@ -250,7 +240,7 @@ public class JenkinsReportParser extends ReportParser {
 	public TestHistory parseRuns(ArrayList<ArrayList<File>> testRunFiles,
 			ArrayList<String> dirs) {
 
-		currentRunIdx = 1; // Counter for the directories list.
+		int currentRunIdx = 1;
 		for (ArrayList<File> files : testRunFiles) {
 			try {
 				currentTestRun = new TestRun();

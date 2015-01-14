@@ -24,17 +24,9 @@
 
 package unitth.junit;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.TreeMap;
-import java.util.TreeSet;
+import unitth.core.*;
 
-import unitth.core.CustomStringLengthComparator;
-import unitth.core.RunHistory;
-import unitth.core.TestItemUtils;
-import unitth.core.UnitTH;
-import unitth.core.UnitTHException;
+import java.util.*;
 
 /**
  * This class is main place holder for all the statistics that have been read
@@ -50,7 +42,6 @@ import unitth.core.UnitTHException;
 public class TestHistory extends RunHistory {
 
 	private TreeSet<TestRun> history = null;
-	private TreeSet<TestRun> sortedHistory = null;
 	private int noUniqueTestCases = 0;
 	private int noIgnoredTestCases = 0;
 	private double worstRun = 100.0;
@@ -358,7 +349,7 @@ public class TestHistory extends RunHistory {
 		// First count the number of unique test cases
 		// they have been executed.
 		double sumOfPassRates = 0.0;
-		sortedHistory = new TreeSet<TestRun>();
+		TreeSet<TestRun> sortedHistory = new TreeSet<TestRun>();
 
 		for (TestRun tr : history) {
 			tr.calcStats();
@@ -523,7 +514,7 @@ public class TestHistory extends RunHistory {
 			// having to generate it in all places where it is used. But only
 			// if the flag use absolute paths are set to false which is the
 			// default.
-			if (UnitTH.useAbsPaths == false) {
+			if (!UnitTH.useAbsPaths) {
 				tr.setRelativePathFromOutputDir(UnitTH.rootFolder,
 					UnitTH.reportPath);
 			} else {
@@ -540,8 +531,8 @@ public class TestHistory extends RunHistory {
 		// 1) Get a list of sorted keys.
 		// 2) For every package where there is a sub match in name we increment.
 		//
-		String[] packageNames = testPackageSummaries.keySet().toArray(
-				new String[0]);
+		java.util.Set<String> var = testPackageSummaries.keySet();
+		String[] packageNames = var.toArray(new String[var.size()]);
 		Arrays.sort(packageNames, new CustomStringLengthComparator());
 
 		for (String s1 : packageNames) {

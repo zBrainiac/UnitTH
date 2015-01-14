@@ -25,21 +25,19 @@
  */
 package unitth.junit;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
-
 import unitth.core.ReportParser;
 import unitth.core.UnitTH;
 import unitth.core.UnitTHException;
 import unitth.jenkins.JenkinsReportParser;
+
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * This class is responsible for handling all the parsing of all JUnit files. It
@@ -57,24 +55,7 @@ public class JUnitReportParser extends ReportParser {
 
 	private final String c_XML_TAG_TESTSUITE = "testsuite";
 	private final String c_XML_TAG_TESTCASE = "testcase";
-	private final String c_XML_TAG_FAILURE = "failure";
-	private final String c_XML_TAG_FAILURES = "failures";
-	private final String c_XML_TAG_SKIPPED = "skipped";
-	private final String c_XML_TAG_ERROR = "error";
-	private final String c_XML_TAG_TESTS = "tests";
-	private final String c_XML_TAG_TIME = "time";
-	private final String c_XML_TAG_NAME = "name";
-	private final String c_XML_TAG_PROPERTY = "property";
-	private final String c_XML_TAG_TIMESTAMP = "timestamp";
-	private final String c_XML_TAG_LAUNCH_TIMESTAMP = "launch.timestamp";
-	private final String c_XML_TAG_PROPERTY_VALUE = "value";
-	private final String c_XML_TAG_PROPERTY_NAME = "name";
-	private final String c_XML_TAG_IGNORE = "skipped";
 
-	private int currentRunIdx = 0;
-
-	/* Currently parsed element holders. */
-	private TestRun currentTestRun = null;
 	private TestModule currentTestModule = null;
 	private TestCase currentTestCase = null;
 	private TestHistory history = null;
@@ -90,11 +71,9 @@ public class JUnitReportParser extends ReportParser {
 			history = new TestHistory();
 		} catch (SAXException t) {
 			System.err.println("Could not create SAX parser... "+t.getMessage());
-			return;
 		} catch (Throwable t) {
 			t.printStackTrace();
 			System.err.println("Unknown exception... "+t.getMessage());
-			return;
 		}
 	}
 
@@ -115,19 +94,28 @@ public class JUnitReportParser extends ReportParser {
 			eName = qName; // not namespace-aware
 		}
 
+		String c_XML_TAG_FAILURE = "failure";
+		String c_XML_TAG_ERROR = "error";
+		String c_XML_TAG_PROPERTY = "property";
 		if (c_XML_TAG_TESTSUITE.equals(eName)) {
 
 			currentTestModule = new TestModule();
+			String c_XML_TAG_TIMESTAMP = "timestamp";
 			if (attrs.getIndex(c_XML_TAG_TIMESTAMP) != -1) {
 				currentTestModule.setDate(attrs.getValue(c_XML_TAG_TIMESTAMP));
 			}
 
 			String c_XML_TAG_ERRORS = "errors";
 			currentTestModule.setNoErrors(attrs.getValue(c_XML_TAG_ERRORS));
+			String c_XML_TAG_FAILURES = "failures";
 			currentTestModule.setNoFailures(attrs.getValue(c_XML_TAG_FAILURES));
+			String c_XML_TAG_SKIPPED = "skipped";
 			currentTestModule.setNoIgnored(attrs.getValue(c_XML_TAG_SKIPPED));
+			String c_XML_TAG_TESTS = "tests";
 			currentTestModule.setNoTestCases(attrs.getValue(c_XML_TAG_TESTS)); // Will be overwritten if the class has been ignored
+			String c_XML_TAG_TIME = "time";
 			currentTestModule.setExecutionTime(attrs.getValue(c_XML_TAG_TIME));
+			String c_XML_TAG_NAME = "name";
 			currentTestModule.setName(attrs.getValue(c_XML_TAG_NAME));
 
 			if (UnitTH.c_DBG) {
@@ -141,10 +129,13 @@ public class JUnitReportParser extends ReportParser {
 						+ "\n");
 			}
 		} else if (c_XML_TAG_PROPERTY.equals(eName)) {
+			String c_XML_TAG_PROPERTY_NAME = "name";
 			String str = attrs.getValue(c_XML_TAG_PROPERTY_NAME);
 			if (null != str) {
+				String c_XML_TAG_LAUNCH_TIMESTAMP = "launch.timestamp";
 				if (str.equals(c_XML_TAG_LAUNCH_TIMESTAMP)
 						&& null == currentTestModule.getExecutionDate()) {
+					String c_XML_TAG_PROPERTY_VALUE = "value";
 					currentTestModule.setDate(attrs
 							.getValue(c_XML_TAG_PROPERTY_VALUE));
 				}
@@ -185,6 +176,7 @@ public class JUnitReportParser extends ReportParser {
 		if ("".equals(eName)) {
 			eName = qName; // not namespace-aware
 		}
+		String c_XML_TAG_IGNORE = "skipped";
 		if (c_XML_TAG_TESTSUITE.equals(eName)) {
 			// void
 		} else if (c_XML_TAG_TESTCASE.equals(eName)) {
@@ -197,7 +189,7 @@ public class JUnitReportParser extends ReportParser {
 			}
 			
 			// Entire class has been ignored
-            if (currentTestCase.getName().equals(currentTestModule.getName())) {
+			if (currentTestCase != null ? currentTestCase.getName().equals(currentTestModule.getName()) : false) {
 				currentTestModule.setAsIgnored();
 				currentTestModule.setNoTestCases("0"); // TODO, valid fix or not
 			}
@@ -240,10 +232,10 @@ public class JUnitReportParser extends ReportParser {
 	public TestHistory parseRuns(ArrayList<ArrayList<File>> testRunFiles,
 			ArrayList<String> dirs) {
 
-		currentRunIdx = 1; // Counter for the directories list.
+		int currentRunIdx = 1;
 		for (ArrayList<File> files : testRunFiles) {
 			try {
-				currentTestRun = new TestRun();
+				TestRun currentTestRun = new TestRun();
 				parsedTestPackages = new HashMap<String, TestPackage>();
 				// Populate the current test run object and return
 				// the relative path to the parsed files

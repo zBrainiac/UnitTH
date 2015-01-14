@@ -1,7 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="1382ed69-6407-4f08-99ef-8fb39e824501" name="Default" comment="" />
+    <list default="true" id="1382ed69-6407-4f08-99ef-8fb39e824501" name="Default" comment="update README">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/unitth/fitnesse/FitNesseReportParser.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/unitth/fitnesse/RootTestSuite.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/unitth/fitnesse/RootTestSuiteSummary.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/unitth/fitnesse/TestCase.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/unitth/fitnesse/TestCaseSummary.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/unitth/fitnesse/TestHistory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/unitth/fitnesse/TestItem.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/unitth/fitnesse/TestItemSummary.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/unitth/fitnesse/TestRun.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/unitth/fitnesse/TestSuite.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/unitth/fitnesse/TestSuiteSummary.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/unitth/html/fitnesse/FitNesseHistoryHtmlGen.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/unitth/html/fitnesse/FitNesseHistoryHtmlMainGen.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/unitth/html/fitnesse/FitNesseHistoryHtmlTestSuiteGen.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/unitth/graphics/junit/ExecutionTimeGraphCreator.class" afterPath="$PROJECT_DIR$/target/classes/unitth/graphics/junit/ExecutionTimeGraphCreator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/unitth/core/FileCheckingParser.class" afterPath="$PROJECT_DIR$/target/classes/unitth/core/FileCheckingParser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/unitth/html/fitnesse/FitNesseHistoryHtmlGen.class" afterPath="$PROJECT_DIR$/target/classes/unitth/html/fitnesse/FitNesseHistoryHtmlGen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/unitth/html/junit/HtmlGen.class" afterPath="$PROJECT_DIR$/target/classes/unitth/html/junit/HtmlGen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/unitth/html/junit/HtmlMainGen.class" afterPath="$PROJECT_DIR$/target/classes/unitth/html/junit/HtmlMainGen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/unitth/html/junit/HtmlModuleGen.class" afterPath="$PROJECT_DIR$/target/classes/unitth/html/junit/HtmlModuleGen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/unitth/html/junit/HtmlPackageGen.class" afterPath="$PROJECT_DIR$/target/classes/unitth/html/junit/HtmlPackageGen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/unitth/junit/JUnitReportParser.class" afterPath="$PROJECT_DIR$/target/classes/unitth/junit/JUnitReportParser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/unitth/jenkins/JenkinsReportParser.class" afterPath="$PROJECT_DIR$/target/classes/unitth/jenkins/JenkinsReportParser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/unitth/graphics/junit/NumberGraphCreator.class" afterPath="$PROJECT_DIR$/target/classes/unitth/graphics/junit/NumberGraphCreator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/unitth/graphics/junit/PassRateGraphCreator.class" afterPath="$PROJECT_DIR$/target/classes/unitth/graphics/junit/PassRateGraphCreator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/unitth/junit/TestHistory.class" afterPath="$PROJECT_DIR$/target/classes/unitth/junit/TestHistory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/unitth/junit/TestModule.class" afterPath="$PROJECT_DIR$/target/classes/unitth/junit/TestModule.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/unitth/junit/TestPackage.class" afterPath="$PROJECT_DIR$/target/classes/unitth/junit/TestPackage.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/unitth/junit/TestPackageSummary.class" afterPath="$PROJECT_DIR$/target/classes/unitth/junit/TestPackageSummary.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/unitth/junit/TestRun.class" afterPath="$PROJECT_DIR$/target/classes/unitth/junit/TestRun.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/unitth/core/UnitTH$1.class" afterPath="$PROJECT_DIR$/target/classes/unitth/core/UnitTH$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/unitth/core/UnitTH$2.class" afterPath="$PROJECT_DIR$/target/classes/unitth/core/UnitTH$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/unitth/core/UnitTH$3.class" afterPath="$PROJECT_DIR$/target/classes/unitth/core/UnitTH$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/unitth/core/UnitTH.class" afterPath="$PROJECT_DIR$/target/classes/unitth/core/UnitTH.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/unithistreport/images/et.png" afterPath="$PROJECT_DIR$/src/test/resources/unithistreport/images/et.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/unithistreport/images/etg-not-in-package.png" afterPath="$PROJECT_DIR$/src/test/resources/unithistreport/images/etg-not-in-package.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/unithistreport/images/fn.png" afterPath="$PROJECT_DIR$/src/test/resources/unithistreport/images/fn.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/unithistreport/images/mfn-not-in-package.png" afterPath="$PROJECT_DIR$/src/test/resources/unithistreport/images/mfn-not-in-package.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/unithistreport/images/mtc-not-in-package.png" afterPath="$PROJECT_DIR$/src/test/resources/unithistreport/images/mtc-not-in-package.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/unithistreport/images/tc.png" afterPath="$PROJECT_DIR$/src/test/resources/unithistreport/images/tc.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/unitth-2.1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/unitth-2.1.0-SNAPSHOT.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/unitth/unitth.jar" afterPath="$PROJECT_DIR$/out/artifacts/unitth/unitth.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/unitth/graphics/junit/ExecutionTimeGraphCreator.java" afterPath="$PROJECT_DIR$/src/main/java/unitth/graphics/junit/ExecutionTimeGraphCreator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/unitth/core/FileCheckingParser.java" afterPath="$PROJECT_DIR$/src/main/java/unitth/core/FileCheckingParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/unitth/html/junit/HtmlGen.java" afterPath="$PROJECT_DIR$/src/main/java/unitth/html/junit/HtmlGen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/unitth/html/junit/HtmlMainGen.java" afterPath="$PROJECT_DIR$/src/main/java/unitth/html/junit/HtmlMainGen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/unitth/html/junit/HtmlModuleGen.java" afterPath="$PROJECT_DIR$/src/main/java/unitth/html/junit/HtmlModuleGen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/unitth/html/junit/HtmlPackageGen.java" afterPath="$PROJECT_DIR$/src/main/java/unitth/html/junit/HtmlPackageGen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/unitth/junit/JUnitReportParser.java" afterPath="$PROJECT_DIR$/src/main/java/unitth/junit/JUnitReportParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/unitth/jenkins/JenkinsReportParser.java" afterPath="$PROJECT_DIR$/src/main/java/unitth/jenkins/JenkinsReportParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/unitth/graphics/junit/NumberGraphCreator.java" afterPath="$PROJECT_DIR$/src/main/java/unitth/graphics/junit/NumberGraphCreator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/unitth/graphics/junit/PassRateGraphCreator.java" afterPath="$PROJECT_DIR$/src/main/java/unitth/graphics/junit/PassRateGraphCreator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/unitth/junit/TestHistory.java" afterPath="$PROJECT_DIR$/src/main/java/unitth/junit/TestHistory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/unitth/junit/TestModule.java" afterPath="$PROJECT_DIR$/src/main/java/unitth/junit/TestModule.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/unitth/junit/TestPackage.java" afterPath="$PROJECT_DIR$/src/main/java/unitth/junit/TestPackage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/unitth/junit/TestPackageSummary.java" afterPath="$PROJECT_DIR$/src/main/java/unitth/junit/TestPackageSummary.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/unitth/junit/TestRun.java" afterPath="$PROJECT_DIR$/src/main/java/unitth/junit/TestRun.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/unitth/core/UnitTH.java" afterPath="$PROJECT_DIR$/src/main/java/unitth/core/UnitTH.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/unithistreport/index.html" afterPath="$PROJECT_DIR$/src/test/resources/unithistreport/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/unithistreport/main.html" afterPath="$PROJECT_DIR$/src/test/resources/unithistreport/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/unithistreport/css/style.css" afterPath="$PROJECT_DIR$/src/test/resources/unithistreport/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/css/style.css" afterPath="$PROJECT_DIR$/target/classes/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/unithistreport/th-module-TEST-marcel-junit.html" afterPath="$PROJECT_DIR$/src/test/resources/unithistreport/th-module-TEST-marcel-junit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/unithistreport/th-package-not-in-package.html" afterPath="$PROJECT_DIR$/src/test/resources/unithistreport/th-package-not-in-package.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/unithistreport/top.html" afterPath="$PROJECT_DIR$/src/test/resources/unithistreport/top.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unitth.iml" afterPath="$PROJECT_DIR$/unitth.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unitth.properties" afterPath="$PROJECT_DIR$/unitth.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="UnitTH.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -35,6 +109,39 @@
     </option>
     <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/README.txt" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/resources/css/style.css" />
+        <option value="$PROJECT_DIR$/src/test/resources/junitsamplereport/2014-12-30/TEST-marcel-junit1.xml" />
+        <option value="$PROJECT_DIR$/src/test/resources/junitsamplereport/2014-12-30/TEST-marcel-junit2.xml" />
+        <option value="$PROJECT_DIR$/runtest.sh" />
+        <option value="$PROJECT_DIR$/src/main/java/unitth/fitnesse/FitNesseReportParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/unitth/graphics/junit/ExecutionTimeGraphCreator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/unitth/html/fitnesse/FitNesseHistoryHtmlTestSuiteGen.java" />
+        <option value="$PROJECT_DIR$/src/main/java/unitth/graphics/junit/PassRateGraphCreator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/unitth/core/FileCheckingParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/unitth/junit/TestModule.java" />
+        <option value="$PROJECT_DIR$/src/main/java/unitth/fitnesse/RootTestSuiteSummary.java" />
+        <option value="$PROJECT_DIR$/src/main/java/unitth/fitnesse/TestSuiteSummary.java" />
+        <option value="$PROJECT_DIR$/src/main/java/unitth/junit/TestHistory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/unitth/html/fitnesse/FitNesseHistoryHtmlMainGen.java" />
+        <option value="$PROJECT_DIR$/src/main/java/unitth/html/fitnesse/FitNesseHistoryHtmlGen.java" />
+        <option value="$PROJECT_DIR$/src/main/java/unitth/junit/JUnitReportParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/unitth/html/junit/HtmlGen.java" />
+        <option value="$PROJECT_DIR$/src/main/java/unitth/html/junit/HtmlMainGen.java" />
+        <option value="$PROJECT_DIR$/unitth.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/unitth/core/UnitTH.java" />
+      </list>
+    </option>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -49,6 +156,7 @@
     </option>
   </component>
   <component name="MavenProjectNavigator">
+    <option name="showIgnored" value="false" />
     <treeState>
       <PATH>
         <PATH_ELEMENT>
@@ -87,9 +195,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="940" />
+    <option name="x" value="540" />
     <option name="y" value="23" />
-    <option name="width" value="1619" />
+    <option name="width" value="2009" />
     <option name="height" value="1333" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -99,7 +207,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="1" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -115,6 +223,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -133,90 +242,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UnitTH" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UnitTH" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="unithistreport" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UnitTH" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UnitTH" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UnitTH" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UnitTH" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UnitTH" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UnitTH" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -230,39 +258,73 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="top&#9;PSI&#9;JAVA://unitth.html.junit.HtmlGen#TOP_PAGE_HEIGHT&#10;javadoc&#9;ACTION&#9;GenerateJavadoc&#10;v&#9;ACTION&#9;ActivateVersionControlToolWindow&#10;Ignored&#9;ACTION&#9;Maven.ShowIgnored" />
+    <property name="FullScreen" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/unitth/html" />
+      <recent name="$PROJECT_DIR$/src/main/java/unitth" />
+    </key>
   </component>
   <component name="RunManager" selected="Maven.make">
+    <configuration default="false" name="runtest.sh (1)" type="BashConfigurationType" factoryName="Bash" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/runtest.sh" />
+      <option name="PARAMETERS" value="" />
+      <module name="unitth" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <configuration default="false" name="runtest.sh (2)" type="BashConfigurationType" factoryName="Bash" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/runtest.sh" />
+      <option name="PARAMETERS" value="" />
+      <module name="unitth" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <configuration default="false" name="runtest.sh (3)" type="BashConfigurationType" factoryName="Bash" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/runtest.sh" />
+      <option name="PARAMETERS" value="" />
+      <module name="unitth" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
@@ -290,33 +352,17 @@
       </MavenSettings>
       <method />
     </configuration>
+    <configuration default="true" type="executeSpecs" factoryName="Gauge Execution">
+      <setting name="environment" value="" />
+      <setting name="specsToExecute" value="" />
+      <method />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JarApplication" factoryName="JAR Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -360,21 +406,6 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -396,6 +427,74 @@
       <patterns />
       <method />
     </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="unitth" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -414,6 +513,54 @@
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="false" name="UnitTH debug" type="Application" factoryName="Application">
+      <output_file path="$USER_HOME$/Desktop/log" is_save="true" />
+      <extension name="coverage" enabled="false" merge="false" track_test_folders="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="unitth.core.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="unitth.core.UnitTH" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;src/test/resources/junitsamplereport/*&quot;" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="unitth" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="runtest.sh" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/runtest.sh" />
+      <option name="PARAMETERS" value="" />
+      <module name="unitth" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
     <configuration default="false" name="make" type="MavenRunConfiguration" factoryName="Maven">
@@ -440,13 +587,31 @@
           </MavenRunnerParameters>
         </option>
       </MavenSettings>
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Maven.make" />
+    <list size="6">
+      <item index="0" class="java.lang.String" itemvalue="Application.UnitTH debug" />
+      <item index="1" class="java.lang.String" itemvalue="Bash.runtest.sh" />
+      <item index="2" class="java.lang.String" itemvalue="Maven.make" />
+      <item index="3" class="java.lang.String" itemvalue="Bash.runtest.sh (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Bash.runtest.sh (2)" />
+      <item index="5" class="java.lang.String" itemvalue="Bash.runtest.sh (3)" />
     </list>
+    <recent_temporary>
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Bash.runtest.sh (3)" />
+        <item index="1" class="java.lang.String" itemvalue="Bash.runtest.sh (2)" />
+        <item index="2" class="java.lang.String" itemvalue="Bash.runtest.sh (1)" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -459,38 +624,84 @@
       <option name="number" value="Default" />
       <updated>1420103463919</updated>
     </task>
+    <task id="LOCAL-00001" summary="update README">
+      <created>1420107296760</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1420107296760</updated>
+    </task>
+    <task id="LOCAL-00002" summary="remove old ANT build">
+      <created>1420107776615</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1420107776615</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update README">
+      <created>1420110864079</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1420110864079</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update README">
+      <created>1420132720666</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1420132720666</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="940" y="23" width="1619" height="1333" extended-state="0" />
+    <frame x="540" y="23" width="2009" height="1333" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.48428687" sideWeight="0.49968293" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32957292" sideWeight="0.49953052" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48348105" sideWeight="0.49953052" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904264" sideWeight="0.49974582" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.48428687" sideWeight="0.50031704" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41579372" sideWeight="0.49968293" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="SimpleHttpClient" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="UDDIViewWindow" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3996777" sideWeight="0.7596244" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32823813" sideWeight="0.3467209" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41579372" sideWeight="0.49953052" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="SimpleHttpClient" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32957292" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="UDDIViewWindow" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32957292" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18199112" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16268429" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23272036" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32957292" sideWeight="0.49968293" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24504322" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32823813" sideWeight="0.6532791" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32957292" sideWeight="0.49968293" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32957292" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3990346" sideWeight="0.84392476" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -505,12 +716,43 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="remove old ANT build" />
+    <MESSAGE value="update README" />
+    <option name="LAST_COMMIT_MESSAGE" value="update README" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint log-message="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/unitth/core/UnitTH.java</url>
+          <line>262</line>
+          <properties class="unitth.core.UnitTH" method="&lt;init&gt;" />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/unitth/core/UnitTH.java</url>
+          <line>658</line>
+          <properties class="unitth.core.UnitTH" method="parseAndCalculate" />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/unitth/core/UnitTH.java</url>
+          <line>490</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="13" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -518,11 +760,308 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/unitth.iml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/core/UnitTH.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="791">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="13335">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#40913#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#12570#12571#0" expanded="true" />
+            <element signature="e#12593#12594#0" expanded="true" />
+            <element signature="e#16440#16442#0" expanded="false" />
+            <element signature="method#unpackAndGenerate#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#unpackAndGenerateFNR#0;class#UnitTH#0" expanded="false" />
+            <element signature="docComment;method#parseAndCalculate#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#createDir#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#createDir#1;class#UnitTH#0" expanded="false" />
+            <element signature="method#extractFilesFromJar#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getFileFromJar#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getReportDirProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getXmlFilterProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getAbsPathsProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#wrongFitNesseRootInvocation#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#wrongJenkinsInvocation#0;class#UnitTH#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/html/junit/HtmlGen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8235" max-vertical-offset="9795">
+          <caret line="598" column="22" selection-start-line="598" selection-start-column="7" selection-end-line="598" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#22075#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/html/junit/HtmlMainGen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4799" max-vertical-offset="12240">
+          <caret line="394" column="12" selection-start-line="394" selection-start-column="12" selection-end-line="394" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#32396#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1766#1767#0" expanded="false" />
+            <element signature="e#1813#1814#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/core/UnitTH.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1980" max-vertical-offset="13305">
+          <caret line="132" column="45" selection-start-line="132" selection-start-column="45" selection-end-line="132" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#40913#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#12570#12571#0" expanded="true" />
+            <element signature="e#12593#12594#0" expanded="true" />
+            <element signature="e#16440#16442#0" expanded="false" />
+            <element signature="method#unpackAndGenerate#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#unpackAndGenerateFNR#0;class#UnitTH#0" expanded="false" />
+            <element signature="docComment;method#parseAndCalculate#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#createDir#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#createDir#1;class#UnitTH#0" expanded="false" />
+            <element signature="method#extractFilesFromJar#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getFileFromJar#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getReportDirProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getXmlFilterProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getAbsPathsProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#wrongFitNesseRootInvocation#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#wrongJenkinsInvocation#0;class#UnitTH#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/html/junit/HtmlGen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8235" max-vertical-offset="9795">
+          <caret line="598" column="22" selection-start-line="598" selection-start-column="7" selection-end-line="598" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#22075#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/html/junit/HtmlMainGen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="12240">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#32396#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1766#1767#0" expanded="false" />
+            <element signature="e#1813#1814#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/core/UnitTH.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1980" max-vertical-offset="13305">
+          <caret line="132" column="45" selection-start-line="132" selection-start-column="45" selection-end-line="132" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#40913#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#12570#12571#0" expanded="true" />
+            <element signature="e#12593#12594#0" expanded="true" />
+            <element signature="e#16440#16442#0" expanded="false" />
+            <element signature="method#unpackAndGenerate#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#unpackAndGenerateFNR#0;class#UnitTH#0" expanded="false" />
+            <element signature="docComment;method#parseAndCalculate#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#createDir#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#createDir#1;class#UnitTH#0" expanded="false" />
+            <element signature="method#extractFilesFromJar#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getFileFromJar#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getReportDirProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getXmlFilterProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getAbsPathsProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#wrongFitNesseRootInvocation#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#wrongJenkinsInvocation#0;class#UnitTH#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/html/junit/HtmlGen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8235" max-vertical-offset="9795">
+          <caret line="598" column="22" selection-start-line="598" selection-start-column="7" selection-end-line="598" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#22075#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/html/junit/HtmlMainGen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="12240">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#32396#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1766#1767#0" expanded="false" />
+            <element signature="e#1813#1814#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/core/UnitTH.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1980" max-vertical-offset="13305">
+          <caret line="132" column="45" selection-start-line="132" selection-start-column="45" selection-end-line="132" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#40913#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#12570#12571#0" expanded="true" />
+            <element signature="e#12593#12594#0" expanded="true" />
+            <element signature="e#16440#16442#0" expanded="false" />
+            <element signature="method#unpackAndGenerate#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#unpackAndGenerateFNR#0;class#UnitTH#0" expanded="false" />
+            <element signature="docComment;method#parseAndCalculate#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#createDir#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#createDir#1;class#UnitTH#0" expanded="false" />
+            <element signature="method#extractFilesFromJar#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getFileFromJar#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getReportDirProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getXmlFilterProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getAbsPathsProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#wrongFitNesseRootInvocation#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#wrongJenkinsInvocation#0;class#UnitTH#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/html/junit/HtmlGen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9795">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#22075#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/core/UnitTH.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="13215">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#40913#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#12570#12571#0" expanded="true" />
+            <element signature="e#12593#12594#0" expanded="true" />
+            <element signature="e#16440#16442#0" expanded="false" />
+            <element signature="method#unpackAndGenerate#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#unpackAndGenerateFNR#0;class#UnitTH#0" expanded="false" />
+            <element signature="docComment;method#parseAndCalculate#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#createDir#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#createDir#1;class#UnitTH#0" expanded="false" />
+            <element signature="method#extractFilesFromJar#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getFileFromJar#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getReportDirProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getXmlFilterProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getAbsPathsProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#wrongFitNesseRootInvocation#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#wrongJenkinsInvocation#0;class#UnitTH#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/core/UnitTH.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="13215">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#40913#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#12570#12571#0" expanded="true" />
+            <element signature="e#12593#12594#0" expanded="true" />
+            <element signature="e#16440#16442#0" expanded="false" />
+            <element signature="method#unpackAndGenerate#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#unpackAndGenerateFNR#0;class#UnitTH#0" expanded="false" />
+            <element signature="docComment;method#parseAndCalculate#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#createDir#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#createDir#1;class#UnitTH#0" expanded="false" />
+            <element signature="method#extractFilesFromJar#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getFileFromJar#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getReportDirProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getXmlFilterProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getAbsPathsProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#wrongFitNesseRootInvocation#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#wrongJenkinsInvocation#0;class#UnitTH#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/core/UnitTH.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="13305">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#40913#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#12570#12571#0" expanded="true" />
+            <element signature="e#12593#12594#0" expanded="true" />
+            <element signature="e#16440#16442#0" expanded="false" />
+            <element signature="method#unpackAndGenerate#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#unpackAndGenerateFNR#0;class#UnitTH#0" expanded="false" />
+            <element signature="docComment;method#parseAndCalculate#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#createDir#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#createDir#1;class#UnitTH#0" expanded="false" />
+            <element signature="method#extractFilesFromJar#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getFileFromJar#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getReportDirProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getXmlFilterProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getAbsPathsProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#wrongFitNesseRootInvocation#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#wrongJenkinsInvocation#0;class#UnitTH#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/core/UnitTH.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="13035">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#40913#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#12570#12571#0" expanded="true" />
+            <element signature="e#12593#12594#0" expanded="true" />
+            <element signature="e#16440#16442#0" expanded="false" />
+            <element signature="method#unpackAndGenerate#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#unpackAndGenerateFNR#0;class#UnitTH#0" expanded="false" />
+            <element signature="docComment;method#parseAndCalculate#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#createDir#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#createDir#1;class#UnitTH#0" expanded="false" />
+            <element signature="method#extractFilesFromJar#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getFileFromJar#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getReportDirProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getXmlFilterProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getAbsPathsProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#wrongFitNesseRootInvocation#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#wrongJenkinsInvocation#0;class#UnitTH#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/html/junit/HtmlGen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9795">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/html/junit/HtmlGen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9795">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -530,8 +1069,182 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8381795" vertical-offset="372" max-vertical-offset="2730">
           <caret line="103" column="31" selection-start-line="103" selection-start-column="31" selection-end-line="103" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25373134" vertical-offset="66" max-vertical-offset="870">
+          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/sonarqube-4.5.1/web/css/sonar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.021929825" vertical-offset="0" max-vertical-offset="684">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5031056" vertical-offset="0" max-vertical-offset="4350">
+          <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/junitsamplereport/2014-12-30/TEST-marcel-junit.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170">
+          <caret line="22" column="5" selection-start-line="0" selection-start-column="0" selection-end-line="72" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/junitsamplereport/2014-12-30/TEST-marcel-junit1.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170">
+          <caret line="1" column="59" selection-start-line="1" selection-start-column="59" selection-end-line="1" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="805">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/junitsamplereport/2014-12-30/TEST-marcel-junit2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170">
+          <caret line="0" column="59" selection-start-line="0" selection-start-column="59" selection-end-line="0" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unitth.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="791">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runtest.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
+          <caret line="1" column="60" selection-start-line="1" selection-start-column="60" selection-end-line="1" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/unithistreport/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4350">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/graphics/junit/ExecutionTimeGraphCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="5686" max-vertical-offset="6870">
+          <caret line="432" column="16" selection-start-line="432" selection-start-column="16" selection-end-line="432" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/graphics/junit/PassRateGraphCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="3421" max-vertical-offset="4335">
+          <caret line="278" column="16" selection-start-line="278" selection-start-column="16" selection-end-line="278" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/core/FileCheckingParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="333" max-vertical-offset="1050">
+          <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/junit/TestModule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3903" max-vertical-offset="4650">
+          <caret line="347" column="19" selection-start-line="347" selection-start-column="19" selection-end-line="347" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/junit/TestHistory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6666" max-vertical-offset="12030">
+          <caret line="542" column="52" selection-start-line="542" selection-start-column="52" selection-end-line="542" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/junit/JUnitReportParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2091" max-vertical-offset="4545">
+          <caret line="193" column="106" selection-start-line="193" selection-start-column="106" selection-end-line="193" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/unithistreport/top.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="794">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/html/junit/HtmlGen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8235" max-vertical-offset="9795">
+          <caret line="598" column="22" selection-start-line="598" selection-start-column="7" selection-end-line="598" selection-end-column="22" />
           <folding>
-            <element signature="e#1309#2905#0" expanded="false" />
+            <element signature="e#0#22075#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/html/junit/HtmlMainGen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4799" max-vertical-offset="12240">
+          <caret line="394" column="12" selection-start-line="394" selection-start-column="12" selection-end-line="394" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#32396#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1766#1767#0" expanded="false" />
+            <element signature="e#1813#1814#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unitth.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="139" max-vertical-offset="945">
+          <caret line="29" column="12" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/unitth/core/UnitTH.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.056062583" vertical-offset="2683" max-vertical-offset="13770">
+          <caret line="176" column="45" selection-start-line="176" selection-start-column="45" selection-end-line="176" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#40913#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#12570#12571#0" expanded="true" />
+            <element signature="e#12593#12594#0" expanded="true" />
+            <element signature="e#16440#16442#0" expanded="false" />
+            <element signature="method#unpackAndGenerate#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#unpackAndGenerateFNR#0;class#UnitTH#0" expanded="false" />
+            <element signature="docComment;method#parseAndCalculate#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#createDir#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#createDir#1;class#UnitTH#0" expanded="false" />
+            <element signature="method#extractFilesFromJar#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getFileFromJar#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getReportDirProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getXmlFilterProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#getAbsPathsProp#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#wrongFitNesseRootInvocation#0;class#UnitTH#0" expanded="false" />
+            <element signature="method#wrongJenkinsInvocation#0;class#UnitTH#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -546,7 +1259,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.0889371" />
+                <option value="0.2" />
                 <option value="0.5" />
               </list>
             </option>
@@ -595,6 +1308,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

@@ -20,20 +20,16 @@
  */
 package unitth.html.junit;
 
+import unitth.core.UnitTH;
+import unitth.html.HtmlGenUtils;
+import unitth.junit.*;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.util.Date;
-
-import unitth.core.UnitTH;
-import unitth.html.HtmlGenUtils;
-import unitth.junit.TestCaseSummary;
-import unitth.junit.TestCaseVerdict;
-import unitth.junit.TestHistory;
-import unitth.junit.TestItemSummary;
-import unitth.junit.TestRun;
 
 /**
  * This class is responsible for generation of the HTML report pages.
@@ -43,13 +39,10 @@ import unitth.junit.TestRun;
 public class HtmlGen {
 
 	protected static final String c_LF = "\r\n";
-	protected static final String c_TAB = "  ";
+	private static final String c_TAB = "  ";
 
-	protected final String IMGDIR = "img";
-	protected final String CSSDIR = "css";
 	protected final String HTML_MAIN_FRAME_FILE = "main.html";
-	protected final String HTML_TOP_FRAME_FILE = "top.html";
-	protected final String HTML_MAIN = "index.html";
+	private final String HTML_TOP_FRAME_FILE = "top.html";
 	protected final String HTMLMODULEOUTPUTFILE_PREFIX = "th-module-";
 	protected final String HTMLMODULEOUTPUTFILE_SUFFIX = ".html";
 	protected final String HTMLPACKAGEOUTPUTFILE_PREFIX = "th-package-";
@@ -59,19 +52,13 @@ public class HtmlGen {
 	protected final String IMAGE_TC_PREFIX = "mtc-";
 	protected final String IMAGE_FN_PREFIX = "mfn-";
 	protected final String IMAGE_ET_PREFIX = "etg-";
-	protected final int TOP_PAGE_HEIGHT = 36;
 	protected final String TOP_BGCOLOR = "BLACK";
 	protected final int ICON_HEIGHT = 24;
-	protected final int ICON_WIDTH = 24;
-	protected final int SPREAD_HEIGHT = 6;
-	protected final int SPREAD_WIDTH = 6;
 
 	protected TestHistory th = null;
 	protected boolean generateExecTimeGraphs = false;
 
-	protected String destDir;
-	protected String imgDir;
-	protected String cssDir;
+	protected final String destDir;
 
 	/**
 	 * CTOR, sets the history to generate and sets a few of the fixed paths.
@@ -82,8 +69,10 @@ public class HtmlGen {
 		th = history;
 		this.generateExecTimeGraphs = generateExecTimeGraphs;
 		destDir = UnitTH.rootFolder;
-		imgDir = destDir + File.separator + IMGDIR;
-		cssDir = destDir + File.separator + CSSDIR;
+		String IMGDIR = "img";
+		String imgDir = destDir + File.separator + IMGDIR;
+		String CSSDIR = "css";
+		String cssDir = destDir + File.separator + CSSDIR;
 	}
 
 	/*
@@ -99,35 +88,41 @@ public class HtmlGen {
 		return ret;
 	}
 
-	/**
-	 * Sets the report destination directory.
-	 * 
-	 * @param dDir
-	 *            The report destination directory.
-	 */
-	public void setDestDir(String dDir) {
-		this.destDir = dDir;
-	}
+// --Commented out by Inspection START (01/01/15 19:30):
+//	/**
+//	 * Sets the report destination directory.
+//	 *
+//	 * @param dDir
+//	 *            The report destination directory.
+//	 */
+//	public void setDestDir(String dDir) {
+//		this.destDir = dDir;
+//	}
+// --Commented out by Inspection STOP (01/01/15 19:30)
 
-	/**
-	 * Sets the image out put directory.
-	 * 
-	 * @param iDir
-	 *            The image out put directory.
-	 */
-	public void setImgDir(String iDir) {
-		this.imgDir = iDir;
-	}
+// --Commented out by Inspection START (01/01/15 19:30):
+//	/**
+//	 * Sets the image out put directory.
+//	 *
+//	 * @param iDir
+//	 *            The image out put directory.
+//	 */
+//	public void setImgDir(String iDir) {
+//		this.imgDir = iDir;
+//	}
+// --Commented out by Inspection STOP (01/01/15 19:30)
 
-	/**
-	 * Sets the css out put directory.
-	 * 
-	 * @param cDir
-	 *            The css out put directory.
-	 */
-	public void setCssDir(String cDir) {
-		this.cssDir = cDir;
-	}
+// --Commented out by Inspection START (01/01/15 19:30):
+//	/**
+//	 * Sets the css out put directory.
+//	 *
+//	 * @param cDir
+//	 *            The css out put directory.
+//	 */
+//	public void setCssDir(String cDir) {
+//		this.cssDir = cDir;
+//	}
+// --Commented out by Inspection STOP (01/01/15 19:30)
 
 	/**
 	 * The main entry point for the HTML generation.
@@ -140,7 +135,7 @@ public class HtmlGen {
     /**
      * Generates the top page in the framed history output.
      */
-    public void generateTopPage() {
+	void generateTopPage() {
 	String fileName = destDir + File.separator + HTML_TOP_FRAME_FILE;
 	BufferedWriter bwout = null;
 	try {
@@ -173,7 +168,7 @@ public class HtmlGen {
      *            The buffered writer to close.
      * @return <code>true</code> - only if the buffer was successfully closed
      */
-    protected boolean closeFile(BufferedWriter writer) {
+	void closeFile(BufferedWriter writer) {
 	try {
 	    writer.flush();
 	    writer.close();
@@ -183,10 +178,8 @@ public class HtmlGen {
 			    + " Possible fix: check file system permissions."
 			    + " Possible fix: make sure the properties are correct in the UnitTH properties file.");
 	    e.printStackTrace();
-	    return false;
 	}
-	return true;
-    }
+	}
 
     /**
      * Creates a new file given by the fileName parameter and returns a
@@ -227,7 +220,7 @@ public class HtmlGen {
 	 * @param buf
 	 *            The page buffer to append to.
 	 */
-	public void generateTopContents(BufferedWriter buf) throws IOException {
+	void generateTopContents(BufferedWriter buf) throws IOException {
 		String backIcon = UnitTH.IMAGE_DIR + "/" + UnitTH.BACK_ICON;
 		String unitthLogo = UnitTH.IMAGE_DIR + "/" + UnitTH.LOGO;
 		buf.write(t(1)
@@ -257,14 +250,16 @@ public class HtmlGen {
     /**
      * Generates the frames for the index page.
      */
-    public void generateMainFrames() {
-	String fileName = destDir + File.separator + HTML_MAIN;
+	void generateMainFrames() {
+		String HTML_MAIN = "index.html";
+		String fileName = destDir + File.separator + HTML_MAIN;
 	BufferedWriter bwout = null;
 	try {
 	    bwout = createFile(fileName);
 	    startPage(bwout, "UnitTH - Test History");
-	    bwout.write("<frameset rows=\"" + TOP_PAGE_HEIGHT
-		    + ",*\" frameborder=\"0\" border=\"0\" framespacing=\"0\">"
+		int TOP_PAGE_HEIGHT = 36;
+		bwout.write("<frameset rows=\"" + TOP_PAGE_HEIGHT
+				+ ",*\" frameborder=\"0\" border=\"0\" framespacing=\"0\">"
 		    + c_LF);
 	    bwout.write(t(1) + "<frame src=\"" + HTML_TOP_FRAME_FILE
 		    + "\" name=\"menupage\" noresize scrolling=\"no\">" + c_LF);
@@ -311,7 +306,7 @@ public class HtmlGen {
 	    String color = "prpass";
 	    if (200 == greenWidth) {
 		color = "prpass";
-	    } else if (200 == redWidth) {
+		} else {
 		color = "prfail";
 	    }
 	    buf.write(t(7) + t(1) + "<TD class=\"" + color
@@ -334,7 +329,7 @@ public class HtmlGen {
      * @param buf The buffer to append to. @param pageTitle The title name for
      * this page.
      */
-    protected void startPage(BufferedWriter buf, String pageTitle) throws IOException {
+	void startPage(BufferedWriter buf, String pageTitle) throws IOException {
 	buf.write("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">"
 		+ c_LF);
 	buf.write("<html>" + c_LF);
@@ -377,32 +372,38 @@ public class HtmlGen {
 		buf.flush();
 	}
 
-	/**
-	 * Returns the report destination directory.
-	 * 
-	 * @return The report destination directory.
-	 */
-	public String getDestDir() {
-		return destDir;
-	}
+// --Commented out by Inspection START (01/01/15 19:30):
+//	/**
+//	 * Returns the report destination directory.
+//	 *
+//	 * @return The report destination directory.
+//	 */
+//	public String getDestDir() {
+//		return destDir;
+//	}
+// --Commented out by Inspection STOP (01/01/15 19:30)
 
-	/**
-	 * Returns the images destination directory.
-	 * 
-	 * @return The images destination directory.
-	 */
-	public String getImgDir() {
-		return imgDir;
-	}
+// --Commented out by Inspection START (01/01/15 19:30):
+//	/**
+//	 * Returns the images destination directory.
+//	 *
+//	 * @return The images destination directory.
+//	 */
+//	public String getImgDir() {
+//		return imgDir;
+//	}
+// --Commented out by Inspection STOP (01/01/15 19:30)
 
-	/**
-	 * Returns the css files destination directory.
-	 * 
-	 * @return The css files destination directory.
-	 */
-	public String getCssDir() {
-		return cssDir;
-	}
+// --Commented out by Inspection START (01/01/15 19:30):
+//	/**
+//	 * Returns the css files destination directory.
+//	 *
+//	 * @return The css files destination directory.
+//	 */
+//	public String getCssDir() {
+//		return cssDir;
+//	}
+// --Commented out by Inspection STOP (01/01/15 19:30)
 
 	/*
 	 * Returns the first tag in a HTML-link (a href) created from the run path
@@ -413,7 +414,7 @@ public class HtmlGen {
 	 */
 	protected String getHtmlReportLink(TestRun tr, String linkText) {
 		String link = null;
-		if (UnitTH.useAbsPaths == true) {
+		if (UnitTH.useAbsPaths) {
 			link = tr.getAbsolutePath();
 		} else {
 			link = tr.getRelativePath();
@@ -430,9 +431,6 @@ public class HtmlGen {
 	 * Returns the execution time unit to display on the execution time graph
 	 * header.
 	 * 
-	 * @param tms
-	 *            TestModuleSummary for graphs on the module summary pages. Null
-	 *            if if the graph shall be displayed on the main page.
 	 * @return The unit as String. "ms", "sec", "min", "hours"
 	 */
 	public String getExecutionTimeUnit(TestItemSummary tis) {
@@ -661,8 +659,10 @@ public class HtmlGen {
 
 	    buf.write(t(4));
 	    buf.write(t(4));
-	    buf.write("<TD class=\""
-		    + cssClass
+		int SPREAD_WIDTH = 6;
+		int SPREAD_HEIGHT = 6;
+		buf.write("<TD class=\""
+				+ cssClass
 		    + "\" align=\"center\">"
 		    + getHtmlReportLink(th.getTestRunByIdx(i),
 			    "<img title=\"Run-" + i + "\" src=\"images/"

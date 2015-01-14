@@ -21,19 +21,15 @@
  */
 package unitth.html.junit;
 
+import unitth.core.UnitTH;
+import unitth.html.HtmlGenUtils;
+import unitth.junit.*;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Iterator;
-
-import unitth.core.UnitTH;
-import unitth.html.HtmlGenUtils;
-import unitth.junit.TestCaseSummary;
-import unitth.junit.TestHistory;
-import unitth.junit.TestModule;
-import unitth.junit.TestModuleSummary;
-import unitth.junit.TestRun;
 
 /**
  * This class is responsible for generation of the HTML report pages.
@@ -77,13 +73,13 @@ public class HtmlModuleGen extends HtmlGen {
      */
     private void generateModuleAnchors(BufferedWriter out) throws IOException {
 	out.append("<TABLE class=\"mainAnchors\" width=\"100%\">" + c_LF);
-	out.append(t(1) + "<TR>" + c_LF);
-	out.append(t(2) + "<TD>");
+		out.append(t(1)).append("<TR>").append(c_LF);
+		out.append(t(2)).append("<TD>");
 	out.append("<CENTER><a href=\"#runs\">RUNS</a>");
 	out.append("&nbsp;&nbsp;||&nbsp;&nbsp;<a href=\"#testcases\">TEST CASES</a>");
 	out.append("&nbsp;&nbsp;||&nbsp;&nbsp;<a href=\"#spread\">TEST CASE SPREAD</a></CENTER>");
 	out.append("</TD>" + c_LF);
-	out.append(t(1) + "</TR>" + c_LF);
+		out.append(t(1)).append("</TR>").append(c_LF);
 	out.append("</TABLE>" + c_LF);
     }
 

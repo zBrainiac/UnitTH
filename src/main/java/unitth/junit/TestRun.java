@@ -24,16 +24,15 @@
 
 package unitth.junit;
 
+import unitth.core.CustomStringLengthComparator;
+import unitth.core.TestItemUtils;
+import unitth.core.UnitTH;
+
 import java.io.File;
 import java.net.URI;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.Iterator;
-
-import unitth.core.CustomStringLengthComparator;
-import unitth.core.TestItemUtils;
-import unitth.core.UnitTH;
 
 /**
  * This class implements the functionality for the test run object. It stores
@@ -152,10 +151,8 @@ public class TestRun extends TestItem implements Comparable<TestRun> {
 		HashMap<String, TestModule> tms = new HashMap<String, TestModule>();
 
 		Collection<TestPackage> c = testPackages.values();
-		Iterator<TestPackage> iter = c.iterator();
 
-		while (iter.hasNext()) {
-			TestPackage tp = iter.next();
+		for (TestPackage tp : c) {
 			tms.putAll(tp.getTestModules());
 		}
 		return tms;
@@ -306,10 +303,8 @@ public class TestRun extends TestItem implements Comparable<TestRun> {
 	 */
 	public void calcStats() {
 		Collection<TestPackage> c = testPackages.values();
-		Iterator<TestPackage> iter = c.iterator();
 
-		while (iter.hasNext()) {
-			TestPackage tp = iter.next();
+		for (TestPackage tp : c) {
 			tp.calcStats();
 
 			noTestCases += tp.getNoTestCases();
@@ -347,7 +342,8 @@ public class TestRun extends TestItem implements Comparable<TestRun> {
 		// 1) Get a list of sorted keys.
 		// 2) For every package where there is a sub match in name we increment.
 		//
-		String[] packageNames = testPackages.keySet().toArray(new String[0]);
+		java.util.Set<String> var = testPackages.keySet();
+		String[] packageNames = var.toArray(new String[var.size()]);
 		Arrays.sort(packageNames, new CustomStringLengthComparator());
 		
 		for (String s1 : packageNames) {
@@ -416,7 +412,7 @@ public class TestRun extends TestItem implements Comparable<TestRun> {
 
 		int idxOfLastSlash = 0;
 		for (int i = 1; i <= shortest; i++) { // i = 0 or i = 1 ????
-			if (false == a.regionMatches(true, 0, b, 0, i + 1)) {
+			if (!a.regionMatches(true, 0, b, 0, i + 1)) {
 				if (idxOfLastSlash > 0) {
 					a = a.substring(idxOfLastSlash + 1);
 					b = b.substring(idxOfLastSlash + 1);
@@ -586,9 +582,8 @@ public class TestRun extends TestItem implements Comparable<TestRun> {
 		}
 
 		Collection<TestPackage> c = testPackages.values();
-		Iterator<TestPackage> iter = c.iterator();
-		while (iter.hasNext()) {
-			buf += iter.next().toString() + "\n";
+		for (TestPackage aC : c) {
+			buf += aC.toString() + "\n";
 		}
 		return buf;
 	}
@@ -611,7 +606,7 @@ public class TestRun extends TestItem implements Comparable<TestRun> {
 	}
 	
 	public String getChosenPath() {
-		if (UnitTH.useAbsPaths == true) {
+		if (UnitTH.useAbsPaths) {
 			return absolutePath;
 		} else {
 			return runPath;

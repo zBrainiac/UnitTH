@@ -22,23 +22,14 @@
  */
 package unitth.graphics.junit;
 
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics2D;
+import unitth.core.TestItemUtils;
+import unitth.junit.*;
+
+import java.awt.*;
 import java.awt.geom.Line2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.Locale;
-
-import unitth.core.TestItemUtils;
-import unitth.junit.TestHistory;
-import unitth.junit.TestItemSummary;
-import unitth.junit.TestModule;
-import unitth.junit.TestModuleSummary;
-import unitth.junit.TestPackage;
-import unitth.junit.TestPackageSummary;
-import unitth.junit.TestRun;
 
 /**
  * This class is responsible for creating graphs representing the execution
@@ -340,7 +331,7 @@ public class ExecutionTimeGraphCreator extends GraphCreator {
 	 */
 	private void populateExecutionTimeGraph(Graphics2D g2) {
 
-		if (null == history.getRuns() || null == history) {
+		if (null == history.getRuns()) {
 			return;
 		}
 
@@ -414,7 +405,7 @@ public class ExecutionTimeGraphCreator extends GraphCreator {
 			// check first since the module might not be present in the run.
 			double executionTime = 0.0;
 			boolean notInRun = false;
-			if (true == isPackage) {
+			if (isPackage) {
 				TestPackage tp = testRuns[i].getTestPackage(packageName);
 				if (null != tp) {
 					executionTime = tp.getExecutionTimeDouble();
@@ -430,7 +421,7 @@ public class ExecutionTimeGraphCreator extends GraphCreator {
 				}
 			}
 
-			if (false == notInRun) {
+			if (!notInRun) {
 				yCords[j] = (ET_TRUE_HEIGHT
 						- (int) (((executionTime / scale)) * (double) ET_TRUE_HEIGHT) + ET_TOP_OFFSET);
 			} else {

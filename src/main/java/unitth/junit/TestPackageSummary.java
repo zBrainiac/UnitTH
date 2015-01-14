@@ -22,13 +22,13 @@
  */
 package unitth.junit;
 
+import unitth.core.TestItemUtils;
+import unitth.core.UnitTHException;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.TreeSet;
-
-import unitth.core.TestItemUtils;
-import unitth.core.UnitTHException;
 
 /**
  * Purpose, summarize a set of historical packages
@@ -43,6 +43,7 @@ import unitth.core.UnitTHException;
  * Same output as for the modules but filtered and summarized
  * on the package name.
  */
+@SuppressWarnings("WhileLoopReplaceableByForEach")
 public class TestPackageSummary extends TestItemSummary {
 
 	private TreeSet<String> noUniqueTestModules = null;

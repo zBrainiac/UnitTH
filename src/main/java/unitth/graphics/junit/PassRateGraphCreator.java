@@ -22,20 +22,12 @@
  */
 package unitth.graphics.junit;
 
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics2D;
+import unitth.junit.*;
+
+import java.awt.*;
 import java.awt.geom.Line2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
-
-import unitth.junit.TestHistory;
-import unitth.junit.TestModule;
-import unitth.junit.TestModuleSummary;
-import unitth.junit.TestPackage;
-import unitth.junit.TestPackageSummary;
-import unitth.junit.TestRun;
 
 /**
  * This class is responsible for creating graphs representing the pass rates for
@@ -200,7 +192,7 @@ public class PassRateGraphCreator extends GraphCreator {
 	 */
 	private void populateRunGraph(Graphics2D g2) {
 
-		if (null == history.getRuns() || null == history) {
+		if (null == history.getRuns()) {
 			return;
 		}
 
@@ -276,7 +268,7 @@ public class PassRateGraphCreator extends GraphCreator {
 			// check first since the module might not be present in the run.
 
 			// boolean notInRun = false;
-			if (true == isPackage) {
+			if (isPackage) {
 				TestPackage tp = testRuns[i].getTestPackage(packageName);
 				if (null != tp) {
 					barHeight = (int) (tp.getPassPctDouble() / 100.0 * RG_TRUE_HEIGHT);

@@ -22,11 +22,11 @@
  */
 package unitth.junit;
 
+import unitth.core.TestItemUtils;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
-
-import unitth.core.TestItemUtils;
 
 public class TestPackage extends TestItem {
 
@@ -40,8 +40,6 @@ public class TestPackage extends TestItem {
 	private int noPassed = 0;
 	/** All unique tests with ignored verdict in all sub packages and test classes. */
 	private int noIgnored = 0;
-	/** All unique tests packages in this test package. */
-	private int noTestPackagesRec = 0;
 	/** All unique tests cases in this package's test modules. */
 	private int noTestCases = 0;
 	/** The run index for this instance of <code>TestPackage</code>. */
@@ -106,6 +104,8 @@ public class TestPackage extends TestItem {
 	}
 	
 	public int getNoTestPackagesRec() {
+		/* All unique tests packages in this test package. */
+		int noTestPackagesRec = 0;
 		return noTestPackagesRec;
 	}
 	
@@ -182,12 +182,10 @@ public class TestPackage extends TestItem {
 
 		// Iterate through all modules in this package.
 		Collection<TestModule> cm = testModules.values();
-		Iterator<TestModule> iterm = cm.iterator();
 
-		while (iterm.hasNext()) {
-			TestModule tm = iterm.next();
+		for (TestModule tm : cm) {
 			tm.calcStats();
-			
+
 			// Summarize, recursively
 			noErrors += tm.getNoErrors();
 			noIgnored += tm.getNoIgnored();
@@ -195,7 +193,7 @@ public class TestPackage extends TestItem {
 			noPassed += tm.getNoPassed();
 			noTestCases += tm.getNoTestCases();
 			this.executionTime += tm.getExecutionTimeDouble();
-			
+
 			String timeStampHolder = tm.getExecutionDate();
 			if (runDate == null || runDate.isEmpty() || 0 < runDate.compareToIgnoreCase(timeStampHolder)) {
 				runDate = timeStampHolder;

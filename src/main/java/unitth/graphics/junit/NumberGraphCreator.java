@@ -23,21 +23,13 @@
  */
 package unitth.graphics.junit;
 
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics2D;
+import unitth.core.UnitTHException;
+import unitth.junit.*;
+
+import java.awt.*;
 import java.awt.geom.Line2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
-
-import unitth.core.UnitTHException;
-import unitth.junit.TestHistory;
-import unitth.junit.TestItemSummary;
-import unitth.junit.TestModule;
-import unitth.junit.TestPackage;
-import unitth.junit.TestPackageSummary;
-import unitth.junit.TestRun;
 
 public abstract class NumberGraphCreator extends GraphCreator {
 
@@ -172,7 +164,7 @@ public abstract class NumberGraphCreator extends GraphCreator {
 	 */
 	private void populateNumbersGraph(Graphics2D g2) {
 
-		if (null == history.getRuns() || null == history) {
+		if (null == history.getRuns()) {
 			return;
 		}
 
@@ -252,7 +244,7 @@ public abstract class NumberGraphCreator extends GraphCreator {
 		for (int i = testRuns.length - 1; i >= 0; i--, j++) {
 			int getNumbers = 0;
 			boolean notInRun = false;
-			if (true == (tis instanceof TestPackageSummary)) {
+			if ((tis instanceof TestPackageSummary)) {
 				TestPackage tp = testRuns[i].getTestPackage(tis.getName());
 				if (null != tp) {
 					getNumbers = getGraphNumbers(tp);
@@ -269,7 +261,7 @@ public abstract class NumberGraphCreator extends GraphCreator {
 				}
 			}
 
-			if (false == notInRun) {
+			if (!notInRun) {
 				yCords[j] = (NG_TRUE_HEIGHT
 						- (int) (((getNumbers / (double) scale)) * (double) NG_TRUE_HEIGHT) + NG_TOP_OFFSET);
 			} else {

@@ -21,18 +21,18 @@
  */
 package unitth.html.junit;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.IOException;
-import java.util.Collection;
-import java.util.Iterator;
-
 import unitth.core.UnitTH;
 import unitth.html.HtmlGenUtils;
 import unitth.junit.TestHistory;
 import unitth.junit.TestModuleSummary;
 import unitth.junit.TestPackageSummary;
 import unitth.junit.TestRun;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.IOException;
+import java.util.Collection;
+import java.util.Iterator;
 
 /**
  * This class is responsible for generation of the HTML report pages. This class
@@ -73,10 +73,10 @@ public class HtmlMainGen extends HtmlGen {
 	    bwout.write("<TABLE width=\"90%\"><TR><TD>" + c_LF);
 	    generateMainRunSummary(bwout);
 	    bwout.write("<br>" + c_LF);
-	    generateMainRunInfo(bwout);
-	    generateMainRunList(bwout);
-	    bwout.write("<br>" + c_LF);
-	    generateMainPackageInfo(bwout);
+/**        generateMainRunInfo(bwout);  */
+/**     generateMainRunList(bwout);  */
+/**     bwout.write("<br>" + c_LF);  */
+		generateMainPackageInfo(bwout);
 	    generateMainPackageList(bwout);
 	    bwout.write("<br>" + c_LF);
 	    generateMainModuleInfo(bwout);

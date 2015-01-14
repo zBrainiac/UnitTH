@@ -23,11 +23,11 @@
 
 package unitth.junit;
 
+import unitth.core.TestItemUtils;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
-
-import unitth.core.TestItemUtils;
 
 /**
  * This class implements the functionality for the test module object. It stores
@@ -68,13 +68,9 @@ public class TestModule extends TestItem implements Comparable<TestModule> {
 			return false;
 		}
 		TestModule tm = (TestModule) obj;
-		if (runDate.equals(tm.getExecutionDate()) && name.equals(tm.name)
+		return runDate.equals(tm.getExecutionDate()) && name.equals(tm.name)
 				&& executionTime == tm.getExecutionTimeDouble()
-				&& passPct == tm.getPassPctDouble()) {
-			return true;
-		} else {
-			return false;
-		}
+				&& passPct == tm.getPassPctDouble();
 	}
 
 	/**

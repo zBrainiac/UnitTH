@@ -1,19 +1,15 @@
 package unitth.core;
 
-import java.io.File;
-
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+import java.io.File;
+
 public class FileCheckingParser extends DefaultHandler {
 
-	private final String c_XML_TAG_FITNESSE_TESTSUITE = "suiteResults";
-	private final String c_XML_TAG_TEST_REFERENCE = "pageHistoryReference";
-	
 	/** The SAX parser factory used for reading in the order files. */
 	private static SAXParserFactory saxFactory = SAXParserFactory.newInstance();
 	/** The SAXParser instance used for all the parsing. */
@@ -28,7 +24,6 @@ public class FileCheckingParser extends DefaultHandler {
 		} catch (Throwable t) {
 			t.printStackTrace();
 			System.err.println("Unknown exception...");
-			return;
 		}
 	}
 	
@@ -44,9 +39,11 @@ public class FileCheckingParser extends DefaultHandler {
 
 		// We can only check one thing here, otherwise we will overwrite the verdict
 		// in cases where the tag does not match.
+		String c_XML_TAG_FITNESSE_TESTSUITE = "suiteResults";
 		if (c_XML_TAG_FITNESSE_TESTSUITE.equalsIgnoreCase(currentElement)) {
 			suiteResults = true;
 		}
+		String c_XML_TAG_TEST_REFERENCE = "pageHistoryReference";
 		if (c_XML_TAG_TEST_REFERENCE.equalsIgnoreCase(currentElement)) {
 			testCasesExist = true;
 		}
@@ -61,10 +58,6 @@ public class FileCheckingParser extends DefaultHandler {
 			// Silent treatment of thrown exceptions. A thrown exception
 			// must be interpreted as a non valid file. 
 		}
-		if (suiteResults && testCasesExist) {
-			return true;
-		} else {
-			return false;
-		}
+		return suiteResults && testCasesExist;
 	}
 }
