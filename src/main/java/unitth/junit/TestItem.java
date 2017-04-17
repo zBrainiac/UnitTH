@@ -81,6 +81,10 @@ public class TestItem {
 	 * @return The name of the test item.
 	 */
 	public String getName() {
+		if (name == null) {
+			return "module-not-defined";
+		}
+
 		return name;
 	}
 
@@ -99,6 +103,10 @@ public class TestItem {
 	 * @return The package part ripped from the full name.
 	 */
 	public String getPackageName() {
+		if (name == null) {
+			return "package-not-defined";
+		}
+
 		int liof = name.lastIndexOf(".");
 		if (-1 == liof) {
 			return "not-in-package";

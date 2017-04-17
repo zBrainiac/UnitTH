@@ -72,6 +72,10 @@ public abstract class TestItemSummary {
 	 * @return The name of the test module or test case stored in this instance.
 	 */
 	public String getName() {
+		if (name == null) {
+			return "module-not-defined";
+		}
+
 		return name;
 	}
 
@@ -188,6 +192,10 @@ public abstract class TestItemSummary {
 	 * @return The stripped package name.
 	 */
 	public String getPackageName() {
+		if (name == null) {
+			return "package-not-defined";
+		}
+
 		int liof = name.lastIndexOf(".");
 		if (-1 == liof) {
 			return "not-in-package";

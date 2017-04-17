@@ -46,6 +46,10 @@ public class TestItem {
 	}
 	
 	public String getName() {
+		if (name == null) {
+			return "module-not-defined";
+		}
+
 		return name;
 	}
 
