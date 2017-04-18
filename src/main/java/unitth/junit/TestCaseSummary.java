@@ -175,6 +175,10 @@ public class TestCaseSummary extends TestItemSummary {
 	 * @return The stripped package name.
 	 */
 	public String getPackageName() {
+		if (name == null) {
+			return "package-not-defined";
+		}
+
 		int liof = className.lastIndexOf(".");
 		if (-1 == liof) {
 			return "not-in-package";

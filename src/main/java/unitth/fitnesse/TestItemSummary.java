@@ -46,6 +46,10 @@ public abstract class TestItemSummary {
 	}
 	
 	public String getName() {
+		if (name == null) {
+			return "module-not-defined";
+		}
+
 		return name;
 	}
 	
